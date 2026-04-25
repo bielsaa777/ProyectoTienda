@@ -68,7 +68,7 @@ public class ProductoDAO {
 			pstmt.setString(1, p.getNombre());
 			pstmt.setDouble(2, p.getPrecio());
 			pstmt.setInt(3, p.getStock());
-			pstmt.setInt(4, p.getId()); // Necesitamos el ID para saber cuál actualizar
+			pstmt.setInt(4, p.getId());
 			
 			return pstmt.executeUpdate() > 0;
 			
