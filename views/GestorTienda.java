@@ -1,8 +1,6 @@
 package views;
 
 import java.util.Scanner;
-import dao.Conexion;
-import java.io.File;
 
 public class GestorTienda {
 	
@@ -41,4 +39,7 @@ public class GestorTienda {
 		return opcion;
 	}
 
+	
 }
+
+

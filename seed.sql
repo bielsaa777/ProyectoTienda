@@ -15,3 +15,11 @@ CREATE TABLE IF NOT EXISTS clientes (
 	email VARCHAR(255),
 	telefono VARCHAR(20)
 );
+
+CREATE TABLE IF NOT EXISTS pedidos(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	id_cliente INT,
+	FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente),
+	cantidad INT,
+	fecha DATE DEFAULT (CURRENT_DATE)
+);

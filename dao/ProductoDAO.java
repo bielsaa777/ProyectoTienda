@@ -13,7 +13,7 @@ public class ProductoDAO {
 
 	public List<Producto> getAll() {
 		List<Producto> productos = new ArrayList<>();
-		String sql = "SELECT * FROM productos";
+		String sql = "SELECT * FROM pedidos";
 		
 		try (Connection conn = Conexion.getConnection()) {
 			Statement stmt = conn.createStatement();
