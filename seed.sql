@@ -15,13 +15,3 @@ CREATE TABLE IF NOT EXISTS clientes (
 	email VARCHAR(255),
 	telefono VARCHAR(20)
 );
-
-CREATE TABLE IF NOT EXISTS pedidos (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	id_cliente INT,
-	id_producto INT,
-	cantidad INT,
-	fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	FOREIGN KEY (id_cliente) REFERENCES clientes(id) ON DELETE CASCADE,
-	FOREIGN KEY (id_producto) REFERENCES productos(id) ON DELETE CASCADE
-);
