@@ -22,6 +22,12 @@ public class ProductView {
 			case 2 -> {
 				this.addProducto();
 			}
+			case 3 -> {
+				this.actualizarProducto();
+			}
+			case 4 -> {
+				this.borrarProducto();
+			}
 			}			
 		} while (opcion != 5);
 	}
@@ -54,6 +60,38 @@ public class ProductView {
 		
 	}
 
+	private void actualizarProducto() {
+		System.out.println("Introduce el ID del producto a actualizar: ");
+		int id = sc.nextInt();
+		sc.nextLine();
+		
+		System.out.println("Introduce el nuevo nombre: ");
+		String nombre = sc.nextLine();
+		System.out.println("Introduce el nuevo precio: ");
+		double precio = sc.nextDouble();
+		System.out.println("Introduce el nuevo stock: ");
+		int stock = sc.nextInt();
+	
+		Producto p = new Producto(id, nombre, precio, stock);
+				
+		if(this.productoDAO.update(p)) {
+			System.out.println("Producto actualizado correctamente");
+		} else {
+			System.out.println("Ha ocurrido un error");
+		}
+	}
+
+	private void borrarProducto() {
+		System.out.println("Introduce el ID del producto a borrar: ");
+		int id = sc.nextInt();
+		sc.nextLine();
+		
+		if(this.productoDAO.delete(id)) {
+			System.out.println("Producto borrado correctamente");
+		} else {
+			System.out.println("No se ha podido borrar el producto.");
+		}
+	}
 
 	private int mostrarMenu() {
 		System.out.println("-- Gestión de productos --");

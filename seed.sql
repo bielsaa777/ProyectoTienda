@@ -9,6 +9,13 @@ CREATE TABLE IF NOT EXISTS productos (
 	stock INT
 );
 
+CREATE TABLE IF NOT EXISTS clientes (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	nombre VARCHAR(255),
+	email VARCHAR(255),
+	telefono VARCHAR(20)
+);
+
 CREATE TABLE IF NOT EXISTS pedidos(
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	id_cliente INT,
